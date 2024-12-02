@@ -6,19 +6,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace caixa
+namespace caixa.Produto.Produto
 {
-    internal class cadastroproduto
+    class cadastroproduto
     {
-       
+
         private string produto;
         private int codigo;
         private string preco;
         private int estoque;
 
-       
 
-        public string Produto 
+
+        public string Produto
         {
             get { return produto; }
             set { produto = value; }
@@ -79,11 +79,12 @@ namespace caixa
                 ComandoSQl.CommandText = select;
 
                 MySqlDataReader reader = ComandoSQl.ExecuteReader();
-        
-                return reader;
-                
 
-            }catch(Exception ex)
+                return reader;
+
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"Erro no código SQL - {ex.Message} ");
                 return null;

@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace caixa
+namespace caixa.Vendas
 {
     internal class Completar_Venda
     {
@@ -29,7 +29,7 @@ namespace caixa
 
                 string insert;
                 for (int i = 0; i < lista.Count; i++)
-                { 
+                {
                     insert = $"insert into venda_produto(id_venda, id_produto, quantidade) values({id_venda},{lista[i].getId()},{lista[i].getQuantidade()})";
 
                     MySqlCommand comandoSQL = conexaoMySQL.CreateCommand();

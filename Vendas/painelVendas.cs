@@ -129,7 +129,7 @@ namespace caixa
 
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 lblTotal.Text = "R$ 00,00";
             }

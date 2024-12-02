@@ -15,20 +15,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace caixa
+namespace caixa.Venda
 {
     internal class InserirVenda
     {
-       
+
         private string pagamento;
         private string valor;
 
-       
-        public string Valor { get {  return valor; } set {  valor = value; } }
+
+        public string Valor { get { return valor; } set { valor = value; } }
         public string Pagamento { get { return pagamento; } set { pagamento = value; } }
 
 
-        public bool Inserir(List<Produto> lista) {
+        public bool Inserir(List<Produto> lista)
+        {
             try
             {
                 MySqlConnection conexaoMySQL = new MySqlConnection(conexaobd.conexaoBanco);
@@ -46,18 +47,20 @@ namespace caixa
                 long lastId = Convert.ToInt64(lastIdCommand.ExecuteScalar());
 
                 Debug.WriteLine(lista[0].getQuantidade());
-                
+
                 Completar_Venda completar_Venda = new Completar_Venda();
 
-                if (!completar_Venda.InserirVendaProduto(lista, lastId)) {
+                if (!completar_Venda.InserirVendaProduto(lista, lastId))
+                {
                     throw new Exception("Inserção da venda falhou.");
-                    
-                }
-                    return true;
-                
-               
 
-            }catch (Exception ex)
+                }
+                return true;
+
+
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("O banco de dados não está ativo." + ex.Message);
                 return false;
@@ -66,7 +69,7 @@ namespace caixa
         }
 
 
-        
+
 
 
     }

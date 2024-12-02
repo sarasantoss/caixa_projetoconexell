@@ -107,7 +107,7 @@ namespace caixa
 
 
             }
-            catch (Exception ex)
+            catch 
             {
                 MessageBox.Show("Preencha os campos de pesquisa corretamente");
             }

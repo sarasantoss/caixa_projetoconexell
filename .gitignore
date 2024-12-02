@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# conexão com o bd
+caixa\conexaobd.cs
+caixa\Properties\
+caixa\Resources\

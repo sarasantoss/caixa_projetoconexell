@@ -14,12 +14,13 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using caixa.Produto;
 
 namespace caixa
 {
     public partial class Venda : Form
     {
-        List<Produto> listaProdutos = new List<Produto>();
+        List<Product> listaProdutos = new List<Product>();
         public string getValor()
         {
             return lblTotal.Text;
@@ -62,7 +63,7 @@ namespace caixa
                             itemAdicionado = $"{reader["produto"]}              R${reader["preco"]}              x{txtQuant.Text}u             R${precoProd}";
                             listaVenda.Items.Add(itemAdicionado, 1);
 
-                            listaProdutos.Add(new Produto(Convert.ToInt32(txtQuant.Text), Convert.ToInt32(txtQuant.Text)));
+                            listaProdutos.Add(new Product(Convert.ToInt32(txtQuant.Text), Convert.ToInt32(txtQuant.Text)));
                            
                             totalCompra += precoProd;
                             lblTotal.Text = totalCompra.ToString();
@@ -100,7 +101,7 @@ namespace caixa
                             itemAdicionado = $"{reader["produto"]}              R${reader["preco"]}              x{txtQuant.Text}u             R${precoProd}";
                             listaVenda.Items.Add(itemAdicionado, 1);
 
-                            listaProdutos.Add(new Produto(Convert.ToInt32(txtCodPro.Text), Convert.ToInt32(txtQuant.Text)));
+                            listaProdutos.Add(new Product(Convert.ToInt32(txtCodPro.Text), Convert.ToInt32(txtQuant.Text)));
 
                             totalCompra += precoProd;
                             lblTotal.Text = "R$ " + totalCompra.ToString();
@@ -180,7 +181,7 @@ namespace caixa
                 troco = Convert.ToDecimal(txtValRec.Text) - totalCompra;
                 lblTroco.Text = "R$" + troco.ToString();
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Preencha todos os campos corretamente");
             }
