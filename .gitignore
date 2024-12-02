@@ -363,6 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # conexão com o bd
-caixa\conexaobd.cs
-caixa\Properties\
-caixa\Resources\
+.\conexaobd.cs
+.\Properties\
+.\Resources\

@@ -14,13 +14,14 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using caixa.Produto;
 
 
 namespace caixa.Vendas
 {
     internal class Completar_Venda
     {
-        public bool InserirVendaProduto(List<Produto> lista, long id_venda)
+        public bool InserirVendaProduto(List<Product> lista, long id_venda)
         {
             try
             {

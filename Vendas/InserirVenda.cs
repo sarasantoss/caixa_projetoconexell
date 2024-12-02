@@ -14,8 +14,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using caixa.Produto;
 
-namespace caixa.Venda
+namespace caixa.Vendas
 {
     internal class InserirVenda
     {
@@ -28,7 +29,7 @@ namespace caixa.Venda
         public string Pagamento { get { return pagamento; } set { pagamento = value; } }
 
 
-        public bool Inserir(List<Produto> lista)
+        public bool Inserir(List<Product> lista)
         {
             try
             {

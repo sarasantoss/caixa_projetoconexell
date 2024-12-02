@@ -15,7 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using caixa.Produto;
-
+using caixa.Vendas;
 namespace caixa
 {
     public partial class Venda : Form
@@ -46,7 +46,7 @@ namespace caixa
                 if (!txtPro.Text.Equals("")) //caso seja preenchido apenaso nome do produto
                 {
 
-                    cadastroproduto MostrarProduto = new cadastroproduto();
+                    Produto.Produto.cadastroproduto MostrarProduto = new Produto.Produto.cadastroproduto();
                     MostrarProduto.Produto = txtPro.Text;
 
                     MySqlDataReader reader = MostrarProduto.SelecionarProduto();
@@ -84,7 +84,7 @@ namespace caixa
                 else if (!txtCodPro.Text.Equals("")) // caso seja preenchido apenas o codigo do produto
                 {
 
-                    cadastroproduto MostrarProduto = new();
+                    Produto.Produto.cadastroproduto MostrarProduto = new();
                     MostrarProduto.Codigo = Convert.ToInt32(txtCodPro.Text);
 
                     MySqlDataReader reader = MostrarProduto.SelecionarProdutoCod();
